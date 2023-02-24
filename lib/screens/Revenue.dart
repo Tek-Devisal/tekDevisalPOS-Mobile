@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:kamran/components/DetailedReportCard.dart';
-import 'package:kamran/components/RecentReportButton.dart';
-import 'package:kamran/components/colors.dart';
+import 'package:kamran/core/utils/colors.dart';
 import 'package:kamran/screens/HomePage.dart';
+
+import '../core/common/widgets/DetailedReportCard.dart';
 
 class RevenuePage extends StatelessWidget {
   const RevenuePage({super.key});

@@ -1,0 +1,4 @@
+#Fri Feb 24 09:14:35 GMT 2023
+base.0=/home/jesse/flutterProjects/tekDevisalPOS-Mobile/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

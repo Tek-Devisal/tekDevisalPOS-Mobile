@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:kamran/components/RecentReportButton.dart';
-import 'package:kamran/components/colors.dart';
-import 'package:kamran/components/inventoryButton.dart';
+import 'package:kamran/core/common/widgets/inventoryButton.dart';
+import 'package:kamran/core/utils/colors.dart';
 import 'package:kamran/screens/HomePage.dart';
 
 class InventoryPage extends StatelessWidget {

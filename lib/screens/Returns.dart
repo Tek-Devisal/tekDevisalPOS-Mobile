@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
-import 'package:kamran/components/recentReturnButton.dart';
+import 'package:kamran/core/common/widgets/recentReturnButton.dart';
 import 'package:kamran/screens/ReturnDetail.dart';
 
 class ReturnsPage extends StatelessWidget {
