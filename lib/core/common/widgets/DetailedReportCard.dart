@@ -21,7 +21,11 @@ class DetailedReportCard extends StatelessWidget {
       required this.imageUrl,
       required this.dayAmount,
       required this.weekAmount,
-      required this.monthAmount, required this.weekDescription, required this.monthDescription, required this.yearDescription, required this.yearAmount});
+      required this.monthAmount,
+      required this.weekDescription,
+      required this.monthDescription,
+      required this.yearDescription,
+      required this.yearAmount});
 
   @override
   Widget build(BuildContext context) {
@@ -56,19 +60,31 @@ class DetailedReportCard extends StatelessWidget {
               thickness: 1,
             ),
             Row(
-              children: [Text(weekDescription), const Spacer(), Text(weekAmount)],
+              children: [
+                Text(weekDescription),
+                const Spacer(),
+                Text(weekAmount)
+              ],
             ),
             Divider(
               thickness: 1,
             ),
             Row(
-              children: [Text(monthDescription), const Spacer(), Text(monthAmount)],
+              children: [
+                Text(monthDescription),
+                const Spacer(),
+                Text(monthAmount)
+              ],
             ),
             Divider(
               thickness: 1,
             ),
             Row(
-              children: [Text(yearDescription), const Spacer(), Text(yearAmount)],
+              children: [
+                Text(yearDescription),
+                const Spacer(),
+                Text(yearAmount)
+              ],
             ),
           ],
         ),

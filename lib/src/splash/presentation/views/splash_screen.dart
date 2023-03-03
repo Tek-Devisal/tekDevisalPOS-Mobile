@@ -24,11 +24,11 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   void initState() {
-    timer = Timer(const Duration(seconds: 4), () {
+    timer = Timer(const Duration(seconds: 4), () async {
       // coverage:ignore-start
       Navigator.pushReplacementNamed(
           context,
-          getFromSharedPreference() != null
+          await getFromSharedPreference() != null
               ? HomePage.id
               : SignInPage.id); // coverage:ignore-end
     });

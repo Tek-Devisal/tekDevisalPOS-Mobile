@@ -5,12 +5,7 @@ import 'package:flutter/src/widgets/framework.dart';
 class ReturnDetailReportCard extends StatelessWidget {
   //final String heading;
   final String date;
-  final String invoiceNumber;
-  final String returnNumDescription;
-  final String productName;
-  final String productSupplier;
-  final String returnDescription;
-  //final String imageUrl;
+  final String day;
   final String returnAmount;
   final String returnNumber;
 
@@ -19,19 +14,15 @@ class ReturnDetailReportCard extends StatelessWidget {
     //required this.heading,
     //required this.imageUrl,
     required this.date,
-    required this.invoiceNumber,
-    required this.returnNumDescription,
-    required this.productName,
-    required this.returnDescription,
+    required this.day,
     required this.returnAmount,
     required this.returnNumber,
-    required this.productSupplier,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 270,
+      height: 170,
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         elevation: 10,
@@ -45,12 +36,12 @@ class ReturnDetailReportCard extends StatelessWidget {
                 children: [
                   // Image(image: AssetImage(imageUrl)),
                   Text(
-                    invoiceNumber,
+                    date,
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   Spacer(),
                   Text(
-                    date,
+                    day,
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                 ],
@@ -62,12 +53,12 @@ class ReturnDetailReportCard extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  'Product Name: ',
+                  'Amount Returned: ',
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
                 Spacer(),
                 Text(
-                  productName,
+                  returnAmount,
                   style: TextStyle(fontWeight: FontWeight.bold),
                 )
               ],
@@ -78,37 +69,17 @@ class ReturnDetailReportCard extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  'Product Supplier:',
+                  'Products Returned:',
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
                 Spacer(),
                 Text(
-                  productSupplier,
+                  returnNumber,
                   style: TextStyle(fontWeight: FontWeight.bold),
                 )
               ],
             ),
             const Divider(
-              thickness: 1,
-            ),
-            Row(
-              children: [
-                Text(returnDescription),
-                const Spacer(),
-                Text(returnAmount)
-              ],
-            ),
-            Divider(
-              thickness: 1,
-            ),
-            Row(
-              children: [
-                Text(returnNumDescription),
-                const Spacer(),
-                Text(returnNumber)
-              ],
-            ),
-            Divider(
               thickness: 1,
             ),
           ],

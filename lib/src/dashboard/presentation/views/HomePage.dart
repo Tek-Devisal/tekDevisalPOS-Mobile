@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:kamran/core/utils/colors.dart';
-import 'package:kamran/screens/Inventory.dart';
-import 'package:kamran/screens/ReportsHome.dart';
-import 'package:kamran/screens/Returns.dart';
-import 'package:kamran/screens/Revenue.dart';
+import 'package:kamran/src/dashboard/presentation/views/Returns.dart';
+import 'package:kamran/src/dashboard/data/datasource/logout.dart';
+import 'package:kamran/src/dashboard/data/models/dailySalesModel.dart';
+import 'package:kamran/src/dashboard/presentation/views/Inventory.dart';
+import 'package:kamran/src/dashboard/presentation/views/ReportsHome.dart';
+import 'package:kamran/src/dashboard/presentation/views/Revenue.dart';
+import 'package:kamran/src/dashboard/widgets/alertDialog.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -17,30 +20,35 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 4,
       child: Scaffold(
-        appBar: AppBar(leading:  GestureDetector(
-          onTap: (){
-            // Logout
-          },
-          child: const Padding(
-            padding: EdgeInsets.all(5.0),
-            child: CircleAvatar(
-              backgroundImage: AssetImage('assets/images/jesseProfile.jpg'),
+        appBar: AppBar(
+          leading: GestureDetector(
+            onTap: () {
+              // Logout
+              showAlertDialog(context, "Logout",
+                  "Are you sure you want to logout? All local data would be lost.",
+                  () {
+                logout(context);
+              });
+            },
+            child: const Padding(
+              padding: EdgeInsets.all(6.0),
+              child: CircleAvatar(
+                backgroundImage: AssetImage('assets/images/jesseProfile.jpg'),
+              ),
             ),
           ),
-        ),
           backgroundColor: TheColors.buttonColor,
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.notifications),
-            )
-          ],
+          // actions: [
+          //   IconButton(
+          //     onPressed: () {},
+          //     icon: Icon(Icons.notifications),
+          //   )
+          // ],
         ),
         /*drawer: Drawer(
           // Add a ListView to the drawer. This ensures the user can scroll

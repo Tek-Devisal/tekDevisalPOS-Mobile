@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:kamran/app/view/app.dart';
 import 'package:kamran/bootstrap.dart';
 import 'package:kamran/core/utils/constants.dart';
-import 'package:kamran/screens/SignIn.dart';
 import 'package:provider/provider.dart';
 
 import 'core/components/server.dart';

@@ -40,7 +40,7 @@ class SpinningLoader extends StatelessWidget {
               ),
             ],
             borderRadius: BorderRadius.circular(20.adapt(cs.width)),
-            color: Colors.white,
+            color: Colors.red,
           ),
           child: !success
               ? Column(

@@ -3,11 +3,29 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:kamran/core/common/widgets/DayDetailCard.dart';
 import 'package:kamran/core/utils/colors.dart';
-import 'package:kamran/screens/HomePage.dart';
 
-class DayDetailsPage extends StatelessWidget {
-  const DayDetailsPage({super.key});
+class DayDetailsPage extends StatefulWidget {
+  DayDetailsPage(
+      {super.key,
+      required this.day,
+      required this.date,
+      required this.cashReceived,
+      required this.goodSold,
+      required this.goodReturned});
 
+  static const id = '/day-details-page';
+
+  final String day;
+  final String date;
+  final int cashReceived;
+  final int goodSold;
+  final int goodReturned;
+
+  @override
+  State<DayDetailsPage> createState() => _DayDetailsPageState();
+}
+
+class _DayDetailsPageState extends State<DayDetailsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,16 +39,16 @@ class DayDetailsPage extends StatelessWidget {
             Container(
                 padding: const EdgeInsets.all(10),
                 child: DayDetailReportCard(
-                    date: '27/09/2022',
-                    day: 'Thursday',
+                    date: widget.date,
+                    day: widget.day,
                     cashDescription: 'Cash Received',
                     creditDescription: 'Goods Borrowed',
                     soldDescription: 'Goods Sold',
                     returnDescription: 'Goods Returned',
-                    cashAmount: 'GH¢ 2,000',
+                    cashAmount: 'GH¢ ${widget.cashReceived}',
                     creditAmount: 'GH¢ 1,000',
-                    soldAmount: '20',
-                    returnAmount: '2')),
+                    soldAmount: widget.goodSold.toString(),
+                    returnAmount: widget.goodReturned.toString())),
             TextButton(
                 onPressed: () {},
                 child: Container(

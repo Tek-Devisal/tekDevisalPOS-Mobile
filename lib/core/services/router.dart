@@ -201,6 +201,18 @@ PageRouteBuilder<dynamic> _appRoute(RouteSettings settings) {
         const HomePage(),
         settings: settings,
       );
+
+    case InventoryPage.id:
+      return _pageBuilder(
+        const InventoryPage(),
+        settings: settings,
+      );
+
+    // case ReturnsDetailsPage.id:
+    //   return _pageBuilder(
+    //     const ReturnsDetailsPage(),
+    //     settings: settings,
+    //   );
     default:
       return _appRoute(settings);
   }
