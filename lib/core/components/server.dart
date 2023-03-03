@@ -10,7 +10,7 @@ class Server {
         _instance.authority = 'http://10.0.2.2:3001/';
         break;
       case Environment.PROD:
-        _instance.authority = 'production.production.com/';
+        _instance.authority = 'https://tekdevisalpos-379508.uc.r.appspot.com/';
         break;
     }
     return _instance;

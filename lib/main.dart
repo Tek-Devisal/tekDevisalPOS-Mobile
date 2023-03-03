@@ -19,7 +19,7 @@ Future<void> main() async {
   Server(environment: Environment.DEV);
   await bootstrap(
     () => Provider<Environment>.value(
-      value: Environment.DEV,
+      value: Environment.PROD,
       child: const App(),
     ),
   );
