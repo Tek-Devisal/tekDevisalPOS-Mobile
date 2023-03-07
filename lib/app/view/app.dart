@@ -7,8 +7,8 @@
 
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
-import 'package:kamran/core/services/router.imports.dart';
-import 'package:kamran/src/splash/presentation/views/splash_screen.dart';
+import 'package:tekDevisalPOS/core/services/router.imports.dart';
+import 'package:tekDevisalPOS/src/splash/presentation/views/splash_screen.dart';
 
 class App extends StatelessWidget {
   const App({super.key});

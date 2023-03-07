@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:intl/intl.dart';
-import 'package:kamran/core/common/widgets/recentReturnButton.dart';
-import 'package:kamran/src/returns/presentation/views/ReturnDetail.dart';
-import 'package:kamran/src/dashboard/data/datasource/returns_remote_data_source.dart';
-import 'package:kamran/src/dashboard/data/models/returnModel.dart';
+import 'package:tekDevisalPOS/core/common/widgets/recentReturnButton.dart';
+import 'package:tekDevisalPOS/src/returns/presentation/views/ReturnDetail.dart';
+import 'package:tekDevisalPOS/src/dashboard/data/datasource/returns_remote_data_source.dart';
+import 'package:tekDevisalPOS/src/dashboard/data/models/returnModel.dart';
 
 class ReturnsPage extends StatefulWidget {
   const ReturnsPage({super.key});
@@ -33,12 +33,15 @@ class _ReturnsPageState extends State<ReturnsPage> {
         children: [
           Container(
             padding: const EdgeInsets.only(top: 50),
-            child: const Text(
-              'Recent Returns',
-              style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.w800,
-                  color: Colors.black),
+            child: const Center(
+              child: Text(
+                'Recent Returns',
+                style: TextStyle(
+                    fontSize: 30,
+                    fontFamily: "Quicksand_bold",
+                    fontWeight: FontWeight.w800,
+                    color: Colors.black),
+              ),
             ),
           ),
           Container(
@@ -46,7 +49,7 @@ class _ReturnsPageState extends State<ReturnsPage> {
             child: FutureBuilder<List<ReturnModel>>(
                 future: fetchAllReturns,
                 builder: (context, snapshot) {
-                  if (snapshot.hasData) {
+                  if (snapshot.hasData && snapshot.data!.isNotEmpty) {
                     return ListView.builder(
                         shrinkWrap: true,
                         itemCount: snapshot.data?.length,
@@ -78,22 +81,41 @@ class _ReturnsPageState extends State<ReturnsPage> {
                   } else if (snapshot.hasError) {
                     return Column(
                       children: [
-                        Icon(
-                          Icons.error,
+                        Image.asset(
+                          "assets/images/returns.png",
+                          height: 100,
+                          width: 100,
                           color: Colors.red,
-                          size: 50,
                         ),
                         Text(
                           "${snapshot.error}",
                           textAlign: TextAlign.center,
+                          style: TextStyle(fontFamily: "Quicksand_regular"),
+                        ),
+                      ],
+                    );
+                  } else {
+                    return Column(
+                      children: [
+                        SizedBox(
+                          height: 50,
+                        ),
+                        Image.asset(
+                          "assets/images/returns.png",
+                          height: 100,
+                          width: 100,
+                          color: Colors.green,
+                        ),
+                        Text(
+                          "No Return found.",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontFamily: "Quicksand_regular",
+                          ),
                         ),
                       ],
                     );
                   }
-                  // By default show a loading spinner.
-                  return SizedBox(
-                    child: Center(child: CircularProgressIndicator()),
-                  );
                 }),
           ),
         ],

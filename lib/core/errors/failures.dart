@@ -2,7 +2,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:kamran/core/common/features/auth/presentation/views/SignIn.dart';
+import 'package:tekDevisalPOS/core/common/features/auth/presentation/views/SignIn.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class Failure extends Equatable {

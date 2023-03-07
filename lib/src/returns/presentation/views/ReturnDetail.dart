@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:kamran/core/common/widgets/ReturnDetailCard.dart';
-import 'package:kamran/core/utils/colors.dart';
-import 'package:kamran/src/dashboard/data/datasource/return_details_remote_data_source.dart';
-import 'package:kamran/src/dashboard/data/models/returnDetailsModel.dart';
+import 'package:tekDevisalPOS/core/utils/colors.dart';
+import 'package:tekDevisalPOS/src/dashboard/data/datasource/return_details_remote_data_source.dart';
+import 'package:tekDevisalPOS/src/dashboard/data/models/returnDetailsModel.dart';
+import 'package:tekDevisalPOS/core/common/widgets/ReturnDetailCard.dart';
 
 class ReturnsDetailsPage extends StatefulWidget {
   const ReturnsDetailsPage({super.key, required this.date, required this.day});

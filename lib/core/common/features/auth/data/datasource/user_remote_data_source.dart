@@ -4,29 +4,34 @@ import 'dart:convert';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
-import 'package:kamran/core/common/features/auth/data/models/user_model.dart';
-import 'package:kamran/core/components/server.dart';
-import 'package:kamran/core/errors/exceptions.dart';
-import 'package:kamran/core/typedef/typedefs.dart';
-import 'package:kamran/src/dashboard/presentation/views/HomePage.dart';
-import 'package:kamran/src/dashboard/widgets/alertDialog.dart';
-import 'package:kamran/src/dashboard/widgets/loader_dialog.dart';
+import 'package:tekDevisalPOS/core/common/features/auth/data/models/user_model.dart';
+import 'package:tekDevisalPOS/core/components/server.dart';
+import 'package:tekDevisalPOS/core/errors/exceptions.dart';
+import 'package:tekDevisalPOS/core/typedef/typedefs.dart';
+import 'package:tekDevisalPOS/src/dashboard/presentation/views/HomePage.dart';
+import 'package:tekDevisalPOS/src/dashboard/widgets/alertDialog.dart';
+import 'package:tekDevisalPOS/src/dashboard/widgets/loader_dialog.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 Future<void> signInUser(
     BuildContext context, String email, String password) async {
   showLoaderDialog(context);
   final prefs = await SharedPreferences.getInstance();
-  final url = Uri.parse(Server.instance.authority + '/api/v1/user/login');
+  final url = Uri.parse(
+      'https://tekdevisalpos-379508.uc.r.appspot.com/api/v1/user/login');
   final headers = {'Content-Type': 'application/json'};
   final body = jsonEncode({'email': email, 'password': password});
+
   try {
     final response = await http.post(url, headers: headers, body: body);
     // print(response.body);
+
     if (response.statusCode == 200) {
       final data = jsonDecode(response.body) as Map<String, dynamic>;
       final accessToken = data['accessToken'] as String?;
+      // print(accessToken);
       if (accessToken != null) {
         prefs.setString('email', data['email'] as String);
         prefs.setString('accessToken', accessToken);
@@ -36,20 +41,30 @@ Future<void> signInUser(
         prefs.setString('name', data['name'] as String);
         prefs.setString('shop_name', data['shop_name'] as String);
         prefs.setString('shop_id', data['shop_id'] as String);
+
+        Fluttertoast.showToast(msg: 'Login is successful');
+        // ignore: use_build_context_synchronously
         Navigator.pushReplacementNamed(context, HomePage.id);
         return;
+      } else {
+        final data = jsonDecode(response.body) as Map<String, dynamic>;
+        final message = data['message'] as String;
+        Navigator.of(context).pop();
+        showtheDialog(context, 'Error', message);
       }
-      // print(data['message'] as String);
     } else {
-      // ignore: use_build_context_synchronously
-      showtheDialog(context, "Error", "Something went wrong");
-      // print('Failed to sign in. Status code: ${response.statusCode}');
+      final data = jsonDecode(response.body) as Map<String, dynamic>;
+      final message = data['message'] as String;
+      Navigator.of(context).pop();
+      showtheDialog(context, 'Error', message);
     }
   } catch (e) {
-    // ignore: use_build_context_synchronously
     Navigator.of(context).pop();
-    // ignore: use_build_context_synchronously
-    showtheDialog(context, "Error", "Something went wrong");
+    showtheDialog(context, 'Error', e.toString());
     throw ServerException(message: e.toString(), statusCode: 1);
   }
+
+  // Show an alert to the user if there is no response in the data or the status code is not 200
+  // ignore: use_build_context_synchronously
+  // showtheDialog(context, 'Error', 'Something went wrong');
 }

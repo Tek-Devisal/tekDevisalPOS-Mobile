@@ -1,6 +1,6 @@
 // coverage:ignore-file
 import 'package:flutter/material.dart';
-import 'package:kamran/core/extensions/dimension_extensions.dart';
+import 'package:tekDevisalPOS/core/extensions/dimension_extensions.dart';
 
 class SpinningLoader extends StatelessWidget {
   const SpinningLoader({

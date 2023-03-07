@@ -1,6 +1,6 @@
 // coverage:ignore-file
 
-import 'package:kamran/core/utils/constants.dart';
+import 'package:tekDevisalPOS/core/utils/constants.dart';
 
 extension AdaptiveDimension<T extends num> on T {
   /// takes either the current screen width or the height and the actual

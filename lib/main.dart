@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:kamran/app/view/app.dart';
-import 'package:kamran/bootstrap.dart';
-import 'package:kamran/core/utils/constants.dart';
+import 'package:tekDevisalPOS/app/view/app.dart';
+import 'package:tekDevisalPOS/bootstrap.dart';
+import 'package:tekDevisalPOS/core/utils/constants.dart';
 import 'package:provider/provider.dart';
 
 import 'core/components/server.dart';
@@ -16,7 +16,7 @@ Future<void> main() async {
   await SystemChrome.setPreferredOrientations(
     [DeviceOrientation.portraitUp],
   );
-  Server(environment: Environment.DEV);
+  Server(environment: Environment.PROD);
   await bootstrap(
     () => Provider<Environment>.value(
       value: Environment.PROD,

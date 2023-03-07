@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:kamran/src/dashboard/presentation/views/HomePage.dart';
+import 'package:tekDevisalPOS/src/dashboard/presentation/views/HomePage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../../core/common/features/auth/presentation/views/SignIn.dart';

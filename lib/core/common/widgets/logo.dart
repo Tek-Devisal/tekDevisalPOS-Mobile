@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kamran/core/extensions/dimension_extensions.dart';
+import 'package:tekDevisalPOS/core/extensions/dimension_extensions.dart';
 
 import '../../utils/constants.dart';
 
@@ -45,6 +45,7 @@ class Logo extends StatelessWidget {
               child: Text(
                 'POS',
                 style: TextStyle(
+                  fontFamily: "Quicksand_bold",
                   fontSize: fontSize?.adapt(cs.height) ?? 32.adapt(cs.height),
                   fontWeight: FontWeight.w700,
                   letterSpacing: .01,

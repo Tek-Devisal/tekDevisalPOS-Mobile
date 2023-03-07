@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kamran/core/common/widgets/spinning_loader.dart';
+import 'package:tekDevisalPOS/core/common/widgets/spinning_loader.dart';
 
 class ILoader extends StatelessWidget {
   const ILoader({

@@ -16,20 +16,21 @@ class DayDetailReportCard extends StatelessWidget {
   final String soldAmount;
   final String returnAmount;
 
-  const DayDetailReportCard(
-      {super.key,
-      //required this.heading,
-      //required this.imageUrl,
-      required this.date,
-      required this.day,
-      required this.cashDescription,
-      required this.creditDescription,
-      required this.soldDescription,
-      required this.returnDescription,
-      required this.cashAmount,
-      required this.creditAmount,
-      required this.soldAmount,
-      required this.returnAmount,});
+  const DayDetailReportCard({
+    super.key,
+    //required this.heading,
+    //required this.imageUrl,
+    required this.date,
+    required this.day,
+    required this.cashDescription,
+    required this.creditDescription,
+    required this.soldDescription,
+    required this.returnDescription,
+    required this.cashAmount,
+    required this.creditAmount,
+    required this.soldAmount,
+    required this.returnAmount,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -49,12 +50,20 @@ class DayDetailReportCard extends StatelessWidget {
                   // Image(image: AssetImage(imageUrl)),
                   Text(
                     day,
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Quicksand_bold",
+                    ),
                   ),
                   Spacer(),
                   Text(
                     date,
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Quicksand_regular",
+                    ),
                   ),
                 ],
               ),
@@ -64,9 +73,19 @@ class DayDetailReportCard extends StatelessWidget {
             ),
             Row(
               children: [
-                Text(cashDescription),
+                Text(
+                  cashDescription,
+                  style: TextStyle(
+                    fontFamily: "Quicksand_bold",
+                  ),
+                ),
                 const Spacer(),
-                Text(cashAmount)
+                Text(
+                  cashAmount,
+                  style: TextStyle(
+                    fontFamily: "Quicksand_regular",
+                  ),
+                )
               ],
             ),
             Divider(
@@ -74,9 +93,19 @@ class DayDetailReportCard extends StatelessWidget {
             ),
             Row(
               children: [
-                Text(soldDescription),
+                Text(
+                  soldDescription,
+                  style: TextStyle(
+                    fontFamily: "Quicksand_bold",
+                  ),
+                ),
                 const Spacer(),
-                Text(soldAmount)
+                Text(
+                  soldAmount,
+                  style: TextStyle(
+                    fontFamily: "Quicksand_regular",
+                  ),
+                )
               ],
             ),
             Divider(
@@ -84,9 +113,19 @@ class DayDetailReportCard extends StatelessWidget {
             ),
             Row(
               children: [
-                Text(returnDescription),
+                Text(
+                  returnDescription,
+                  style: TextStyle(
+                    fontFamily: "Quicksand_bold",
+                  ),
+                ),
                 const Spacer(),
-                Text(returnAmount)
+                Text(
+                  returnAmount,
+                  style: TextStyle(
+                    fontFamily: "Quicksand_regular",
+                  ),
+                )
               ],
             ),
           ],

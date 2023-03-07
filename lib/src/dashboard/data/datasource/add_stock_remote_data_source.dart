@@ -5,16 +5,16 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:kamran/core/common/features/auth/data/models/user_model.dart';
-import 'package:kamran/core/common/widgets/spinning_loader.dart';
-import 'package:kamran/core/components/server.dart';
-import 'package:kamran/core/errors/exceptions.dart';
-import 'package:kamran/core/errors/failures.dart';
-import 'package:kamran/core/typedef/typedefs.dart';
-import 'package:kamran/src/dashboard/presentation/views/HomePage.dart';
-import 'package:kamran/src/dashboard/presentation/views/Inventory.dart';
-import 'package:kamran/src/dashboard/widgets/alertDialog.dart';
-import 'package:kamran/src/dashboard/widgets/loader_dialog.dart';
+import 'package:tekDevisalPOS/core/common/features/auth/data/models/user_model.dart';
+import 'package:tekDevisalPOS/core/common/widgets/spinning_loader.dart';
+import 'package:tekDevisalPOS/core/components/server.dart';
+import 'package:tekDevisalPOS/core/errors/exceptions.dart';
+import 'package:tekDevisalPOS/core/errors/failures.dart';
+import 'package:tekDevisalPOS/core/typedef/typedefs.dart';
+import 'package:tekDevisalPOS/src/dashboard/presentation/views/HomePage.dart';
+import 'package:tekDevisalPOS/src/dashboard/presentation/views/Inventory.dart';
+import 'package:tekDevisalPOS/src/dashboard/widgets/alertDialog.dart';
+import 'package:tekDevisalPOS/src/dashboard/widgets/loader_dialog.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 Future addNewStock(

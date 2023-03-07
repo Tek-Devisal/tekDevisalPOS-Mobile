@@ -3,8 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:kamran/core/extensions/string_extensions.dart';
-import 'package:kamran/core/utils/colors.dart';
+import 'package:tekDevisalPOS/core/extensions/string_extensions.dart';
+import 'package:tekDevisalPOS/core/utils/colors.dart';
 
 void showSnackBar(BuildContext context, String message) {
   ScaffoldMessenger.of(context)

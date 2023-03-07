@@ -1,8 +1,8 @@
 // coverage:ignore-file
 import 'dart:convert';
 
-import 'package:kamran/core/common/features/auth/domain/entities/user.dart';
-import 'package:kamran/core/typedef/typedefs.dart';
+import 'package:tekDevisalPOS/core/common/features/auth/domain/entities/user.dart';
+import 'package:tekDevisalPOS/core/typedef/typedefs.dart';
 
 // TODO(copyWith): Add copyWith method
 class UserModel extends User {

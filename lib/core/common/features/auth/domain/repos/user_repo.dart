@@ -1,5 +1,5 @@
-import 'package:kamran/core/common/features/auth/domain/entities/user.dart';
-import 'package:kamran/core/typedef/typedefs.dart';
+import 'package:tekDevisalPOS/core/common/features/auth/domain/entities/user.dart';
+import 'package:tekDevisalPOS/core/typedef/typedefs.dart';
 
 
 abstract class UserRepo {

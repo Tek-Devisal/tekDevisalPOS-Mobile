@@ -45,7 +45,8 @@ class DetailedReportCard extends StatelessWidget {
                   Image(image: AssetImage(imageUrl)),
                   Text(
                     heading,
-                    style: TextStyle(fontSize: 30),
+                    style:
+                        TextStyle(fontSize: 25, fontFamily: "Quicksand_bold"),
                   ),
                 ],
               ),
@@ -54,16 +55,13 @@ class DetailedReportCard extends StatelessWidget {
               thickness: 1,
             ),
             Row(
-              children: [Text(dayDescription), const Spacer(), Text(dayAmount)],
-            ),
-            Divider(
-              thickness: 1,
-            ),
-            Row(
               children: [
-                Text(weekDescription),
+                Text(dayDescription),
                 const Spacer(),
-                Text(weekAmount)
+                Text(
+                  dayAmount,
+                  style: TextStyle(fontFamily: "Quicksand_regular"),
+                )
               ],
             ),
             Divider(
@@ -71,9 +69,15 @@ class DetailedReportCard extends StatelessWidget {
             ),
             Row(
               children: [
-                Text(monthDescription),
+                Text(
+                  weekDescription,
+                  style: TextStyle(fontFamily: "Quicksand_bold"),
+                ),
                 const Spacer(),
-                Text(monthAmount)
+                Text(
+                  weekAmount,
+                  style: TextStyle(fontFamily: "Quicksand_regular"),
+                )
               ],
             ),
             Divider(
@@ -81,9 +85,31 @@ class DetailedReportCard extends StatelessWidget {
             ),
             Row(
               children: [
-                Text(yearDescription),
+                Text(
+                  monthDescription,
+                  style: TextStyle(fontFamily: "Quicksand_bold"),
+                ),
                 const Spacer(),
-                Text(yearAmount)
+                Text(
+                  monthAmount,
+                  style: TextStyle(fontFamily: "Quicksand_regular"),
+                )
+              ],
+            ),
+            Divider(
+              thickness: 1,
+            ),
+            Row(
+              children: [
+                Text(
+                  yearDescription,
+                  style: TextStyle(fontFamily: "Quicksand_bold"),
+                ),
+                const Spacer(),
+                Text(
+                  yearAmount,
+                  style: TextStyle(fontFamily: "Quicksand_regular"),
+                )
               ],
             ),
           ],

@@ -1,6 +1,6 @@
 // coverage:ignore-file
 import 'package:flutter/widgets.dart';
-import 'package:kamran/core/common/features/auth/domain/entities/user.dart';
+import 'package:tekDevisalPOS/core/common/features/auth/domain/entities/user.dart';
 
 class UserController extends ChangeNotifier {
   User? _user;

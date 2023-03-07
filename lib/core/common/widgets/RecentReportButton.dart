@@ -36,6 +36,7 @@ class RecentReportButton extends StatelessWidget {
                       day,
                       style: TextStyle(
                           fontSize: 20,
+                          fontFamily: "Quicksand_bold",
                           color: Colors.black,
                           fontWeight: FontWeight.w500),
                     )),
@@ -44,7 +45,10 @@ class RecentReportButton extends StatelessWidget {
                     padding: EdgeInsets.only(right: 10),
                     child: Text(
                       date,
-                      style: TextStyle(color: Colors.black),
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontFamily: "Quicksand_regular",
+                      ),
                     ))
               ],
             ),

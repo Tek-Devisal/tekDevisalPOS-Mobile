@@ -37,6 +37,7 @@ class RecentReturnButton extends StatelessWidget {
                       style: TextStyle(
                           fontSize: 16,
                           color: Colors.black,
+                          fontFamily: "Quicksand_bold",
                           fontWeight: FontWeight.w500),
                     )),
                 Spacer(),
@@ -44,7 +45,8 @@ class RecentReturnButton extends StatelessWidget {
                     padding: EdgeInsets.only(right: 10),
                     child: Text(
                       date,
-                      style: TextStyle(color: Colors.black),
+                      style: TextStyle(
+                          color: Colors.black, fontFamily: "Quicksand_regular"),
                     ))
               ],
             ),

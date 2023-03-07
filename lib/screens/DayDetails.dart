@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:kamran/core/common/widgets/DayDetailCard.dart';
-import 'package:kamran/core/utils/colors.dart';
+import 'package:tekDevisalPOS/core/common/widgets/DayDetailCard.dart';
+import 'package:tekDevisalPOS/core/utils/colors.dart';
 
 class DayDetailsPage extends StatefulWidget {
   DayDetailsPage(
@@ -60,7 +60,11 @@ class _DayDetailsPageState extends State<DayDetailsPage> {
                   child: Center(
                     child: Text(
                       'Download Full Report',
-                      style: TextStyle(color: Colors.white, fontSize: 25),
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 25,
+                        fontFamily: "Quicksand_bold",
+                      ),
                     ),
                   ),
                 )),

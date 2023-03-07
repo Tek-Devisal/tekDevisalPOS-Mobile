@@ -1,5 +1,5 @@
 // coverage:ignore-file
-import 'package:kamran/core/errors/failures.dart';
+import 'package:tekDevisalPOS/core/errors/failures.dart';
 
 extension FailureMessage on Failure {
   String get message {

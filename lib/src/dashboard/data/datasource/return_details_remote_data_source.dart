@@ -4,15 +4,15 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:kamran/core/components/server.dart';
-import 'package:kamran/core/errors/exceptions.dart';
-import 'package:kamran/core/errors/failures.dart';
-import 'package:kamran/core/extensions/custom_extension.dart';
-import 'package:kamran/src/dashboard/data/models/dailyCashRecievedModel.dart';
-import 'package:kamran/src/dashboard/data/models/dailySalesModel.dart';
-import 'package:kamran/src/dashboard/data/models/returnDetailsModel.dart';
-import 'package:kamran/src/dashboard/data/models/returnModel.dart';
-import 'package:kamran/src/dashboard/presentation/views/HomePage.dart';
+import 'package:tekDevisalPOS/core/components/server.dart';
+import 'package:tekDevisalPOS/core/errors/exceptions.dart';
+import 'package:tekDevisalPOS/core/errors/failures.dart';
+import 'package:tekDevisalPOS/core/extensions/custom_extension.dart';
+import 'package:tekDevisalPOS/src/dashboard/data/models/dailyCashRecievedModel.dart';
+import 'package:tekDevisalPOS/src/dashboard/data/models/dailySalesModel.dart';
+import 'package:tekDevisalPOS/src/dashboard/data/models/returnDetailsModel.dart';
+import 'package:tekDevisalPOS/src/dashboard/data/models/returnModel.dart';
+import 'package:tekDevisalPOS/src/dashboard/presentation/views/HomePage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 Future<List<ReturnDetailsModel>> fetchReturnDetails(
@@ -22,7 +22,7 @@ Future<List<ReturnDetailsModel>> fetchReturnDetails(
   String date = prefs.getString("date").toString();
   // print(shop_id);
   final url = Uri.parse(
-      Server.instance.authority + 'api/v1/return/fetch-return-by-date');
+      Server.instance.authority + '/api/v1/return/fetch-return-by-date');
   final headers = {'Content-Type': 'application/json', 'auth-token': token};
   final body = jsonEncode({'date': date});
   try {

@@ -1,4 +1,4 @@
-import 'package:kamran/core/typedef/typedefs.dart';
+import 'package:tekDevisalPOS/core/typedef/typedefs.dart';
 
 abstract class UsecaseWithParams<Type, Params> {
   const UsecaseWithParams();

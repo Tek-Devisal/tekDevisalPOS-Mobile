@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:kamran/core/common/widgets/DetailedReportCard.dart';
-import 'package:kamran/core/utils/colors.dart';
-import 'package:kamran/src/dashboard/data/datasource/daily_cashrecieved_remote_data_source.dart';
-import 'package:kamran/src/dashboard/data/datasource/daily_goodsborrowed_remote_data_source.dart';
-import 'package:kamran/src/dashboard/data/models/dailyCashRecievedModel.dart';
-import 'package:kamran/src/dashboard/data/models/dailyGoodsBorrowedModel.dart';
+import 'package:tekDevisalPOS/core/common/widgets/DetailedReportCard.dart';
+import 'package:tekDevisalPOS/core/utils/colors.dart';
+import 'package:tekDevisalPOS/src/dashboard/data/datasource/daily_cashrecieved_remote_data_source.dart';
+import 'package:tekDevisalPOS/src/dashboard/data/datasource/daily_goodsborrowed_remote_data_source.dart';
+import 'package:tekDevisalPOS/src/dashboard/data/models/dailyCashRecievedModel.dart';
+import 'package:tekDevisalPOS/src/dashboard/data/models/dailyGoodsBorrowedModel.dart';
 
 class RevenuePage extends StatefulWidget {
   const RevenuePage({super.key});
@@ -31,119 +31,154 @@ class _RevenuePageState extends State<RevenuePage> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Container(
-        child: Column(
-          children: [
-            Container(
-              padding: EdgeInsets.only(top: 50),
-              child: Text(
-                'Daily Reports',
-                style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.w800,
-                    color: Colors.black),
-              ),
+      child: Column(
+        children: [
+          Container(
+            padding: EdgeInsets.only(top: 50),
+            child: Text(
+              'Daily Reports',
+              style: TextStyle(
+                  fontSize: 30,
+                  fontFamily: "Quicksand_bold",
+                  fontWeight: FontWeight.w800,
+                  color: Colors.black),
             ),
-            SizedBox(
-              height: 10,
-            ),
-            FutureBuilder<List<DailyCashRecievedModel>>(
-                future: cashRecieved,
-                builder: (context, snapshot) {
-                  if (snapshot.hasData) {
-                    return ListView.builder(
-                        shrinkWrap: true,
-                        itemCount: snapshot.data?.length,
-                        itemBuilder: (BuildContext context, int index) {
-                          return Container(
-                            padding: const EdgeInsets.all(10),
-                            child: DetailedReportCard(
-                                dayDescription: 'Amount Received Today',
-                                dayAmount:
-                                    "GH¢${snapshot.data![index].daily_sales}",
-                                weekDescription: 'Amount Received this Week',
-                                weekAmount:
-                                    "GH¢${snapshot.data![index].weekly_sales}",
-                                monthDescription: 'Amount Received this Month',
-                                monthAmount:
-                                    'GH¢${snapshot.data![index].monthly_sales}',
-                                yearDescription: 'Amount Received this Year',
-                                yearAmount:
-                                    'GH¢${snapshot.data![index].yearly_sales}',
-                                heading: 'Cash Received',
-                                imageUrl: 'assets/images/payment.png'),
-                          );
-                        });
-                  } else if (snapshot.hasError) {
-                    return Column(
-                      children: [
-                        Icon(
-                          Icons.error,
-                          color: Colors.red,
-                          size: 50,
-                        ),
-                        Text(
-                          "${snapshot.error}",
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
-                    );
-                  }
-                  // By default show a loading spinner.
-                  return SizedBox(
-                    child: Center(child: CircularProgressIndicator()),
-                  );
-                }),
-            FutureBuilder<List<DailyGoodsBorrowedModel>>(
-                future: goodsBorrowed,
-                builder: (context, snapshot) {
-                  if (snapshot.hasData) {
-                    return ListView.builder(
-                        shrinkWrap: true,
-                        itemCount: snapshot.data?.length,
-                        itemBuilder: (BuildContext context, int index) {
-                          return Container(
-                            padding: const EdgeInsets.all(10),
-                            child: DetailedReportCard(
-                              dayDescription: 'Amount Borrowed Today',
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          FutureBuilder<List<DailyCashRecievedModel>>(
+              future: cashRecieved,
+              builder: (context, snapshot) {
+                if (snapshot.hasData && snapshot.data!.isNotEmpty) {
+                  return ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: snapshot.data?.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Container(
+                          padding: const EdgeInsets.all(10),
+                          child: DetailedReportCard(
+                              dayDescription: 'Amount Received Today',
                               dayAmount:
-                                  'GH¢${snapshot.data![index].daily_borrowed}',
-                              weekDescription: 'Amount Borrowed this Week',
+                                  "GH¢ ${snapshot.data![index].daily_sales}",
+                              weekDescription: 'Amount Received this Week',
                               weekAmount:
-                                  'GH¢${snapshot.data![index].weekly_borrowed}',
-                              monthDescription: 'Amount Borrowed this Month',
+                                  "GH¢ ${snapshot.data![index].weekly_sales}",
+                              monthDescription: 'Amount Received this Month',
                               monthAmount:
-                                  'GH¢${snapshot.data![index].monthly_borrowed}',
-                              yearDescription: 'Amount Borrowed this Year',
+                                  'GH¢ ${snapshot.data![index].monthly_sales}',
+                              yearDescription: 'Amount Received this Year',
                               yearAmount:
-                                  'GH¢${snapshot.data![index].yearly_borrowed}',
-                              heading: 'Goods Borrowed',
-                              imageUrl: 'assets/images/borrowing.png',
-                            ),
-                          );
-                        });
-                  } else if (snapshot.hasError) {
-                    return Column(
-                      children: [
-                        Icon(
-                          Icons.error,
-                          color: Colors.red,
-                          size: 50,
+                                  'GH¢ ${snapshot.data![index].yearly_sales}',
+                              heading: 'Cash Received',
+                              imageUrl: 'assets/images/payment.png'),
+                        );
+                      });
+                } else if (snapshot.hasError) {
+                  return Column(
+                    children: [
+                      Image.asset(
+                        "assets/images/cash_recieved.png",
+                        height: 100,
+                        width: 100,
+                        color: Colors.red,
+                      ),
+                      Text(
+                        "${snapshot.error}",
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  );
+                } else {
+                  return Column(
+                    children: [
+                      SizedBox(
+                        height: 50,
+                      ),
+                      Image.asset(
+                        "assets/images/cash_recieved.png",
+                        height: 100,
+                        width: 100,
+                        color: Colors.green,
+                      ),
+                      Text(
+                        "No Cash recieved yet.",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: "Quicksand_regular",
                         ),
-                        Text(
-                          "${snapshot.error}",
-                          textAlign: TextAlign.center,
+                      ),
+                    ],
+                  );
+                }
+              }),
+          FutureBuilder<List<DailyGoodsBorrowedModel>>(
+              future: goodsBorrowed,
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: snapshot.data?.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Container(
+                          padding: const EdgeInsets.all(10),
+                          child: DetailedReportCard(
+                            dayDescription: 'Amount Borrowed Today',
+                            dayAmount:
+                                'GH¢ ${snapshot.data![index].daily_borrowed}',
+                            weekDescription: 'Amount Borrowed this Week',
+                            weekAmount:
+                                'GH¢ ${snapshot.data![index].weekly_borrowed}',
+                            monthDescription: 'Amount Borrowed this Month',
+                            monthAmount:
+                                'GH¢ ${snapshot.data![index].monthly_borrowed}',
+                            yearDescription: 'Amount Borrowed this Year',
+                            yearAmount:
+                                'GH¢ ${snapshot.data![index].yearly_borrowed}',
+                            heading: 'Goods Borrowed',
+                            imageUrl: 'assets/images/borrowing.png',
+                          ),
+                        );
+                      });
+                } else if (snapshot.hasError) {
+                  return Column(
+                    children: [
+                      Image.asset(
+                        "assets/images/debt.png",
+                        height: 100,
+                        width: 100,
+                        color: Colors.red,
+                      ),
+                      Text(
+                        "${snapshot.error}",
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  );
+                } else {
+                  return Column(
+                    children: [
+                      SizedBox(
+                        height: 50,
+                      ),
+                      Image.asset(
+                        "assets/images/debt.png",
+                        height: 100,
+                        width: 100,
+                        color: Colors.green,
+                      ),
+                      Text(
+                        "No Goods borrowed yet.",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: "Quicksand_regular",
                         ),
-                      ],
-                    );
-                  }
-                  // By default show a loading spinner.
-                  return SizedBox(
-                      // child: Center(child: CircularProgressIndicator()),
-                      );
-                }),
-          ],
-        ),
+                      ),
+                    ],
+                  );
+                }
+              }),
+        ],
       ),
     );
   }

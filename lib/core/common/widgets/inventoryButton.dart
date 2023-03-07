@@ -34,10 +34,10 @@ class InventoryButton extends StatelessWidget {
                       style: TextStyle(
                           fontSize: 20,
                           color: Colors.black,
+                          fontFamily: "Quicksand_bold",
                           fontWeight: FontWeight.w500),
                     )),
                 Spacer(),
-               
                 Container(
                     padding: EdgeInsets.only(right: 10),
                     child: Text(
@@ -45,6 +45,7 @@ class InventoryButton extends StatelessWidget {
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
+                          fontFamily: "Quicksand_regular",
                           color: Colors.black),
                     )),
                 Spacer(),

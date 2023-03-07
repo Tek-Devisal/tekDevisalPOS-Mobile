@@ -4,11 +4,11 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:kamran/core/components/server.dart';
-import 'package:kamran/core/errors/exceptions.dart';
-import 'package:kamran/core/errors/failures.dart';
-import 'package:kamran/src/dashboard/data/models/dailySalesModel.dart';
-import 'package:kamran/src/dashboard/presentation/views/HomePage.dart';
+import 'package:tekDevisalPOS/core/components/server.dart';
+import 'package:tekDevisalPOS/core/errors/exceptions.dart';
+import 'package:tekDevisalPOS/core/errors/failures.dart';
+import 'package:tekDevisalPOS/src/dashboard/data/models/dailySalesModel.dart';
+import 'package:tekDevisalPOS/src/dashboard/presentation/views/HomePage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 Future<List<DailySalesModel>> fetchDailySales(BuildContext context) async {

@@ -3,14 +3,14 @@ import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:kamran/core/common/features/auth/data/datasource/user_remote_data_source.dart';
-import 'package:kamran/core/common/providers/user_controller.dart';
-import 'package:kamran/core/common/widgets/responsive_safe_area.dart';
-import 'package:kamran/core/extensions/dimension_extensions.dart';
-import 'package:kamran/core/utils/colors.dart';
-import 'package:kamran/core/utils/constants.dart';
-import 'package:kamran/core/utils/functions.dart';
-import 'package:kamran/src/dashboard/presentation/views/HomePage.dart';
+import 'package:tekDevisalPOS/core/common/features/auth/data/datasource/user_remote_data_source.dart';
+import 'package:tekDevisalPOS/core/common/providers/user_controller.dart';
+import 'package:tekDevisalPOS/core/common/widgets/responsive_safe_area.dart';
+import 'package:tekDevisalPOS/core/extensions/dimension_extensions.dart';
+import 'package:tekDevisalPOS/core/utils/colors.dart';
+import 'package:tekDevisalPOS/core/utils/constants.dart';
+import 'package:tekDevisalPOS/core/utils/functions.dart';
+import 'package:tekDevisalPOS/src/dashboard/presentation/views/HomePage.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../widgets/i_loader.dart';
@@ -48,6 +48,7 @@ class SignInPageState extends State<SignInPage> {
                         'Welcome Back!',
                         style: TextStyle(
                             fontSize: 40,
+                            fontFamily: "Quicksand_bold",
                             fontWeight: FontWeight.w800,
                             color: Colors.black),
                       ),
@@ -58,6 +59,7 @@ class SignInPageState extends State<SignInPage> {
                         'To sign in, kindly use your username and password to sign in.',
                         textAlign: TextAlign.center,
                         style: TextStyle(
+                            fontFamily: "Quicksand_regular",
                             fontSize: 15,
                             //fontWeight: FontWeight.w800,
                             color: Colors.black),
@@ -141,7 +143,9 @@ class SignInPageState extends State<SignInPage> {
                                     child: Text(
                                       'Sign in',
                                       style: TextStyle(
-                                          color: Colors.white, fontSize: 25),
+                                          fontFamily: "Quicksand_bold",
+                                          color: Colors.white,
+                                          fontSize: 25),
                                     ),
                                   ),
                                 )),

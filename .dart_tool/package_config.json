@@ -332,6 +332,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "swipe_refresh",
+      "rootUri": "file:///home/jesse/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/swipe_refresh-1.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "term_glyph",
       "rootUri": "file:///home/jesse/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.2.1",
       "packageUri": "lib/",
@@ -368,13 +374,13 @@
       "languageVersion": "2.17"
     },
     {
-      "name": "kamran",
+      "name": "tekDevisalPOS",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2023-02-28T01:13:08.166723Z",
+  "generated": "2023-03-06T23:41:01.561018Z",
   "generator": "pub",
   "generatorVersion": "2.18.0"
 }
